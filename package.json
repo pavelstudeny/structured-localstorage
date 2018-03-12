@@ -1,16 +1,16 @@
 {
-  "name": "@avast/transparent-storage",
-  "version": "1.0.0",
+  "name": "structured-localstorage",
+  "version": "1.0.1",
   "description": "access data as a plain object and get/set them to localStorage transparently",
   "repository": {
     "type": "git",
-    "url": "https://git.int.avast.com/dp/transparent-storage.git"
+    "url": "https://github.com/avast/structured-localstorage.git"
   },
   "main": "index.js",
   "scripts": {
     "test": "jasmine"
   },
-  "author": "Pavel Studeny <pavel.studeny.avast@outlook.com>",
+  "author": "Pavel Studeny",
   "license": "Avast",
   "devDependencies": {
     "jasmine": "^2.8.0",
