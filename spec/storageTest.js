@@ -136,34 +136,4 @@ describe('storage object', function () {
         expect(hit).toBeTruthy();
         expect(count).toBe(1);
     });
-
-    it("clears all keys", function() {
-        storage.key1 = 1;
-        storage.key2 = 2;
-        storage.clear();
-        expect(storage.key1).toBeNull();
-        expect(storage.key2).toBeNull();
-        expect(localStorage.getItem('key1')).toBeNull();
-        expect(localStorage.getItem('key2')).toBeNull();
-    });
-
-    it("clears a key by name", function() {
-        storage.key1 = 1;
-        storage.key2 = 2;
-        storage.clear('key1');
-        expect(storage.key1).toBeNull();
-        expect(storage.key2).not.toBeNull();
-    });
-
-    it("clears multiple keys by name and regex", function() {
-        storage.key1 = 1;
-        storage.key2 = 2;
-        storage.key3 = 3;
-        storage.key4 = 4;
-        storage.clear(['key1', /key[23]/]);
-        expect(storage.key1).toBeNull();
-        expect(storage.key2).toBeNull();
-        expect(storage.key3).toBeNull();
-        expect(storage.key4).not.toBeNull();
-    });
 });

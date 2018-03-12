@@ -17,8 +17,4 @@ var storage = require('structured-localstorage');
 
 storage.key = { subkey: 'value' };
 storage.key.subkey = 'new value';
-
-storage.clear(/k*/);
-storage.clear(['key1', 'key2']);
-storage.clear();
 ```

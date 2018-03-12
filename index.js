@@ -1,35 +1,8 @@
 'use strict';
 
-function clear(keys) {
-    if (arguments.length == 0) {
-        localStorage.clear();
-        return;
-    }
-
-    if (keys != null && !Array.isArray(keys)) {
-        keys = [ keys ];
-    }
-
-    var i = 0;
-    while (i < localStorage.length) {
-        var localKey = localStorage.key(i);
-
-        if (keys.some(function (k) { return localKey.match(k); })) {
-            localStorage.removeItem(localKey);
-        }
-        else {
-            ++i;
-        }
-    }
-}
-
 var pstorage = new Proxy({
 }, {
     get: function (target, name, receiver) {
-        if (name === 'clear') {
-            return clear;
-        }
-
         var strValue = localStorage.getItem(name);
         try {
             // null i parsed as null succesfully
